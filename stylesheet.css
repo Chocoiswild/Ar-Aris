@@ -1,0 +1,45 @@
+.geoapify-autocomplete-input {
+  position: relative;
+  left: -1px;
+  top: -2px;
+  width: 100%;
+  padding: 0 31px 0 7px;
+  outline: none;
+  line-height: 36px;
+  height: 36px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+}
+
+
+.autocomplete-panel {
+  margin: auto;
+  position: relative; 
+  top: 39px;
+  width: 508px;
+  z-index: 1000;
+}
+
+.autocomplete-container {
+  margin: auto;
+  position: relative;
+  /* width: 395px; */
+  }
+
+  html,
+  body,
+  #map {
+  margin: auto;
+
+  height: 400px;
+  width: 530px;
+  }
+body {
+  background: #00228187;
+}
+
+/* #registration-form {
+
+  width: 110%;
+  position: relative;
+} */

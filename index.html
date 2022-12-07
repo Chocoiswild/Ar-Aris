@@ -1,0 +1,64 @@
+<!-- A template for the homepage of the website -->
+
+{% extends "layout.html" %}
+
+{% block title %}Ar Aris{% endblock %}
+
+{% block head %}
+    
+    <!-- Include GeoApi and Leaflet's CSS -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@geoapify/geocoder-autocomplete@1.4.0/styles/minimal.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+        crossorigin=""/>
+    <!-- Include GeoApi and Leaflet's JS -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+        crossorigin=""></script>
+    <script src="https://unpkg.com/@geoapify/geocoder-autocomplete@1.4.0/dist/index.min.js"></script>
+    {{ super() }}
+{% endblock %}
+{% block main %}
+    <div >
+
+        <h1>
+            Welcome to Ar Aris!
+        </h1>
+        <p> Please select your address and enter your contact details,
+            and you will recieve notifications about upcoming power and water outages.</p>
+
+
+        <!-- A form to gather user's email, name, address -->
+        <form action="/" id="registration-form" name="newuserform" method="POST">
+            <div class="row row-cols-sm-auto g-1 align-items-center">
+                
+                <div class="col-auto">
+                    <div class="autocomplete-panel">
+                        <div id="autocomplete" name="autocomplete" class="autocomplete-container"></div>
+                    </div>
+                </div>
+                <div id="map"></div>
+                
+                <div class="col-12">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                </div>
+                <div class="col-12">
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+                <input type="hidden" id="address" name="address">
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+        <p>
+            <br><br>
+            Please note that this project is an experiment, and is in constant development.
+            If you don't recieve a notification when you should have, or recieve a notification
+            in error, please <a href="mailto:chocoiswild@gmail.com">contact me.</a>
+        </p>
+    </div>
+    <!-- Include JS code to run the GeoAPI map and address searcher -->
+    <script type="text/javascript" 
+        src="{{ url_for('static', filename = 'scripts.js') }}"></script>
+{% endblock %}
