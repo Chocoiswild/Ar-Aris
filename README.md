@@ -10,7 +10,6 @@ tags:
   - CSS
 ---
 
-# Python Flask Example
 
 This is a [Flask](https://flask.palletsprojects.com/en/1.1.x/) web app for the Ar Aris project. Ar Aris notifies users when their streets are affected by a power or water outage in the city of Tbilisi, Georgia. The Web app handles user registration, and saves user information to a Postgresql database. The [Ar Aris: Application](https://github.com/Chocoiswild/Ar-Aris-Application) handles the webscraping and notification functionality of the project.
 
