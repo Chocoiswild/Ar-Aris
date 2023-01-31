@@ -64,8 +64,6 @@ autocompleteInput.on('select', (location) => {
         
     }
 
-
-    // Do something with the results[]
 });  
 
 

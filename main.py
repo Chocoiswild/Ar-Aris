@@ -34,13 +34,13 @@ class User(db.Model):
     name=db.Column(db.String)
     email=db.Column(db.String)
     address=db.Column(db.String)
-    postcode=db.Column(db.String)
+    district=db.Column(db.String)
 
-    def __init__(self, name, email, address, postcode):
+    def __init__(self, name, email, address, district):
         self.name=name
         self.email=email
         self.address=address
-        self.postcode=postcode
+        self.district=district
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -56,6 +56,7 @@ def index():
         name = request.form.get("name")
         email = request.form.get("email")
         address = request.form.get("address")
+        district = request.form.get("district")
 
         # Ensure inputs are not empty
         if name == "":
@@ -69,6 +70,9 @@ def index():
 
         if address == "":
             flash("Please type an address and select it", category="message")
+            return render_template("index.html")
+        if district == "District":
+            flash("Please select a district from the list", category="message")
             return render_template("index.html")
 
         # A simple implementation to ensure email is in valid form (foo@bar.baz)
@@ -90,15 +94,9 @@ def index():
         else:
             streetname = address["street"]
 
-        # In rare cases postcodes are not listed. 0000 will be a dummy postcode
-        if "postcode" not in address.keys():
-            postcode = "0000"
-        else:
-            postcode = address["postcode"]
-
         
         # Create user obj from info gained
-        user=User(name, email, streetname, postcode)
+        user=User(name, email, streetname, district)
 
         # Ensure user has not already registered
         # Allow user to register muiltiple addresses per email

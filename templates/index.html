@@ -20,14 +20,14 @@
         <h1>
             Welcome to Ar Aris!
         </h1>
-        <p> Please select your address and enter your contact details,
+        <p> Please select your address, district, and enter your contact details,
             and you will recieve notifications about upcoming power and water outages.</p>
-        <p><b>Don't type your full address. Instead, type and select your street.</b></p>
+        <p><b>Don't type your full address. Instead, just enter your street's name and select it.</b></p>
 
-
-        <!-- A form to gather user's email, name, address -->
+        <!-- TODO: make the fucking collumns all fit on one line! -->
+        <!-- A form to gather user's email, name, district, and address -->
         <form action="/" id="registration-form" name="newuserform" method="POST">
-            <div class="row row-cols-sm-auto g-1 align-items-center">
+            <div class="row row-cols align-items-center">
                 <div class="col-auto">
                     <!-- Get address from Geoapify -->
                     <div class="autocomplete-panel">
@@ -41,9 +41,23 @@
                 <div class="col-12">
                     <input type="text" class="form-control" id="email" name="email" placeholder="Email">
                 </div>
+                <div class="col-12">
+                    <select class="form-select" aria-label=".form-select-sm example" id="district" name="district">
+                        <option selected>District</option>
+                        <option value="Chugureti">Chugureti</option>
+                        <option value="Didube">Didube</option>
+                        <option value="Gldani">Gldani</option>
+                        <option value="Isani">Isani</option>
+                        <option value="Krtsanisi">Krtsanisi</option>
+                        <option value="Mtatsminda">Mtatsminda</option>
+                        <option value="Nadzaladevi">Nadzaladevi</option>
+                        <option value="Saburtalo">Saburtalo</option>
+                        <option value="Samgori">Samgori</option>
+                        <option value="Vake">Vake</option>
+                </div>
                 <!-- Address from Geoapify is assigned to this hidden input field -->
                 <input type="hidden" id="address" name="address">
-                <div class="col-auto">
+                <div class="col-12">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
