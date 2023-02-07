@@ -17,31 +17,35 @@
 {% endblock %}
 {% block main %}
     <div >
-        <h1>
-            Welcome to Ar Aris!
+        <h1 id="site-header">
+            Ar Aris
         </h1>
-        <p> Please select your address, district, and enter your contact details,
-            and you will recieve notifications about upcoming power and water outages.</p>
-        <p><b>Don't type your full address. Instead, just enter your street's name and select it.</b></p>
-
+        
+        <p> Power and water cuts can be really frustrating, and not getting advance warning or not knowing how long they'll last is even more so.
+            <br>Register below to be notified of any utility disruptions that affect your street.
+        </p>
         <!-- TODO: make the fucking collumns all fit on one line! -->
         <!-- A form to gather user's email, name, district, and address -->
         <form action="/" id="registration-form" name="newuserform" method="POST">
-            <div class="row row-cols align-items-center">
-                <div class="col-auto">
-                    <!-- Get address from Geoapify -->
-                    <div class="autocomplete-panel">
-                        <div id="autocomplete" name="autocomplete" class="autocomplete-container"></div>
-                    </div>
+            <div id="streetselectinfo">
+                <b>Please type in the name of your street, then select it from the available options</b>
+            </div>
+            <div id="map-autofill">
+                <div id="autocomplete-wrapper">
+                    <div id="autocomplete" name="autocomplete"></div>
                 </div>
                 <div id="map"></div>
-                <div class="col-12">
+            </div>
+            <div class="row g-1">
+                
+                <input type="hidden" id="address" name="address">
+                <div class="col">
                     <input type="text" class="form-control" id="name" name="name" placeholder="Name">
                 </div>
-                <div class="col-12">
+                <div class="col">
                     <input type="text" class="form-control" id="email" name="email" placeholder="Email">
-                </div>
-                <div class="col-12">
+                  </div>
+                <div class="col-3">
                     <select class="form-select" aria-label=".form-select-sm example" id="district" name="district">
                         <option selected>District</option>
                         <option value="Chugureti">Chugureti</option>
@@ -54,17 +58,15 @@
                         <option value="Saburtalo">Saburtalo</option>
                         <option value="Samgori">Samgori</option>
                         <option value="Vake">Vake</option>
+                    </select>
                 </div>
-                <!-- Address from Geoapify is assigned to this hidden input field -->
-                <input type="hidden" id="address" name="address">
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="col-2">
+                    <button type="submit" class="btn btn-primary">Register</button>
                 </div>
             </div>
         </form>
         <p>
             <br><br>
-            Please note that this project is an experiment, and is in constant development.
             If you don't recieve a notification when you should have, or recieve a notification
             in error, please <a href="mailto:chocoiswild@gmail.com">contact me.</a>
         </p>

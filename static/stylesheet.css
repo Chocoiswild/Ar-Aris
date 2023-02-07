@@ -1,41 +1,68 @@
-.geoapify-autocomplete-input {
-  position: relative;
-  left: -1px;
-  top: -2px;
-  width: 100%;
-  padding: 0 31px 0 7px;
-  outline: none;
-  line-height: 36px;
-  height: 36px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  font-size: 14px;
-}
 
-
-.autocomplete-panel {
+html,
+body
+ {
   margin: auto;
-  position: relative; 
-  top: 39px;
-  width: 508px;
-  z-index: 1000;
-}
-
-.autocomplete-container {
-  margin: auto;
-  position: relative;
-  /* width: 395px; */
-  }
-
-  html,
-  body,
-  #map {
-  margin: auto;
-
   height: 400px;
   width: 530px;
-  }
-body {
-  background: #00228187;
-  font-size: 13px
 }
+body {
+  background-color: #d2e6fc;
+  color:#00438a;
+  font-size: 16px;
+}
+
+#site-content {
+  text-align: start;
+  background: linear-gradient(to right,
+  rgba(255,255,255,0) 0%, rgba(233, 241, 250, 1) .5%,
+  rgba(233, 241, 250, 1) 99.5%, rgba(255,255,255,0) 100%);
+}
+
+#site-header {
+  text-align: center;
+}
+
+#streetselectinfo {
+  text-align: center;
+  font-size: 13.5px;
+}
+
+/* Required to overlay address autocomplete on top of map */
+#map-autofill {
+  position: relative;
+}
+
+#map {
+  border-radius: 0.375rem;
+  margin: auto;
+  position: relative;
+  z-index:10;
+  width: 100%;
+  height: 400px;
+  border: 1px solid rgba(0, 0, 0, 0.001);
+}
+
+#autocomplete-wrapper {
+  opacity: 0.9;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  top: 3px;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+
+}
+#autocomplete {
+  width: 99%;
+}
+.geoapify-autocomplete-input {
+  border-radius: 0.375rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 100%;
+  font-size: 16px;
+}
+
 

@@ -13,25 +13,27 @@
         {% endblock %}
     </head>
     <body>
-        <!-- Feature to recieve flashed messages -->
-        {% if get_flashed_messages() %}
-            <header>
-                <div class="alert alert-primary mb-0 text-center" role="alert">
-                    {{get_flashed_messages() | join(" ") }}
-                </div>
-            </header>
-        {% endif %}
-        <!-- Feature for importing html templates -->
-        <main class="container-fluid py-2 text-center">
-            {% block main %} {% endblock %}
-        </main>
-        <footer class="mb-5 small text-center text-muted">
-            Created by Shash Wighton, 2022
-            <ul style="list-style-type:none;">
-                <li>The address autocomplete function and relevant JS is all thanks to <a href='https://www.geoapify.com'>Geoapify.</a></li>
-                <li>The JS for the interactive map is all thanks to <a href='https://leafletjs.com'>Leaflet.</a></li>
-                <li>The map data itself is from <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a></li>
-            </ul>
-        </footer>
+        <div id="site-content">
+            <main class="container-fluid py-2">
+                <!-- Feature to recieve flashed messages -->
+                {% if get_flashed_messages() %}
+                <header>
+                    <div class="alert alert-primary mb-0 text-center" role="alert">
+                        {{get_flashed_messages() | join(" ") }}
+                    </div>
+                </header>
+                {% endif %}
+                <!-- Feature for importing html templates -->
+                {% block main %} {% endblock %}
+            </main>
+            <footer class="mb-5 small text-center text-muted">
+                Created by Shash Wighton, 2022
+                <ul style="list-style-type:none;">
+                    <li>The address autocomplete function and relevant JS is all thanks to <a href='https://www.geoapify.com'>Geoapify.</a></li>
+                    <li>The JS for the interactive map is all thanks to <a href='https://leafletjs.com'>Leaflet.</a></li>
+                    <li>The map data itself is from <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a></li>
+                </ul>
+            </footer>
+        </div>
     </body>
 </html>     

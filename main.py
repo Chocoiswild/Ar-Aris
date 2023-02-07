@@ -16,7 +16,7 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.config['SQLALCHENY_TRACK_MODIFICATIONS'] = False
 
 
-ENV = 'PROD'
+ENV = 'prod'
 
 if ENV == 'dev':
     app.debug = True
