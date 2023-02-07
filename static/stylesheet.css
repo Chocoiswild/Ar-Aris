@@ -1,11 +1,4 @@
 
-html,
-body
- {
-  margin: auto;
-  height: 400px;
-  width: 530px;
-}
 body {
   background-color: #d2e6fc;
   color:#00438a;
@@ -13,6 +6,8 @@ body {
 }
 
 #site-content {
+  width: clamp(300px, 530px, 100%);
+  margin: auto;
   text-align: start;
   background: linear-gradient(to right,
   rgba(255,255,255,0) 0%, rgba(233, 241, 250, 1) .5%,
@@ -52,11 +47,31 @@ body {
   position: absolute;
   z-index: 1000;
   width: 100%;
-
 }
+
+/* Make the submit button always take up 100% of space available,
+ so it's not just hanging out by itself */
+#submit {
+  width: 100%;
+}
+
+.col {
+  flex: 1 0 150px;
+}
+
+/* Makes input fields wrap around when viewport is small (mobile) */
+.row g-1 {
+  flex-wrap: wrap;
+}
+
 #autocomplete {
   width: 99%;
 }
+
+.leaflet-container {
+  font-size: 10px;
+}
+
 .geoapify-autocomplete-input {
   border-radius: 0.375rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
