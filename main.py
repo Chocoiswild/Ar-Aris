@@ -3,6 +3,19 @@ from flask_sqlalchemy import SQLAlchemy
 import json
 import re
 from decouple import config
+from itsdangerous import URLSafeSerializer, BadData
+
+
+# function for confirming tokens
+def confirm_token(token):
+    s = URLSafeSerializer(config('ITSDANGEROUS', default=""), salt='unsubscribe')
+    try:
+        id = s.loads(token)
+    except:
+        return False
+    return id
+
+
 
 # Configure application
 app = Flask(__name__)
@@ -35,18 +48,43 @@ class User(db.Model):
     email=db.Column(db.String)
     address=db.Column(db.String)
     district=db.Column(db.String)
+    phone=db.Column(db.String)
 
-    def __init__(self, name, email, address, district):
+    def __init__(self, name, email, address, district, phone=""):
         self.name=name
         self.email=email
         self.address=address
         self.district=district
+        self.phone=phone
+
+
+
+@app.route("/unsubscribe/<token>", methods=["GET", "POST"])
+def unsubscribe_email(token):
+
+    id = confirm_token(token)
+    # If ID is False, there's something wrong with the token
+    if not id:
+        flash("The unsubscription link is invalid", category="danger")
+    
+    # Otherwise, check if the user is still in the DB
+    else:
+        user = db.session.execute(db.select(User).filter_by(id=id)).first()
+        # If they are, remove them
+        if user is not None:
+            db.session.delete(user[0])
+            db.session.commit()
+            flash("You have unsubscribed from all Ar Aris notifications", category="message")
+        # Otherwise warn they've already been removed
+        else:
+            flash("You have already unsubscribed from Ar Aris", category="message")
+
+    return render_template('index.html')
+
 
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-
-
     if request.method == "GET":
         return render_template("index.html")
 
@@ -94,7 +132,6 @@ def index():
         else:
             streetname = address["street"]
 
-        
         # Create user obj from info gained
         user=User(name, email, streetname, district)
 
@@ -105,7 +142,6 @@ def index():
             flash("You've already registered this address", category="message")
             return render_template("index.html")
 
-
         # All is good, so add to db
         db.session.add(user)
         db.session.commit()
@@ -113,6 +149,7 @@ def index():
         # flash warning that user saved to DB
         flash("Registered!", category="message")
         return redirect("/")
+
 
 
 if __name__ == "__main__":

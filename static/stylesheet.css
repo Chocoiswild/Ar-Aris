@@ -10,8 +10,10 @@ body {
   margin: auto;
   text-align: start;
   background: linear-gradient(to right,
-  rgba(255,255,255,0) 0%, rgba(233, 241, 250, 1) .5%,
-  rgba(233, 241, 250, 1) 99.5%, rgba(255,255,255,0) 100%);
+    rgba(255,255,255,0) 0%, 
+    rgba(233, 241, 250, 1) .5%,
+    rgba(233, 241, 250, 1) 99.5%, 
+    rgba(255,255,255,0) 100%);
 }
 
 #site-header {
