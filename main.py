@@ -222,9 +222,9 @@ def confirm_registration(token, salt):
             if salt == "Registration":
                 if user[0].email_confirmed == False:
                     user[0].email_confirmed = True
-                    flash(f"Email notifications confirmed", category="message")
+                    flash(f"Registration confirmed", category="message")
                 else:
-                    flash(f"Email notifications already confirmed", category="danger")
+                    flash(f"Registration already confirmed", category="danger")
             
             else:
                 if user[0].phone_confirmed == False:
