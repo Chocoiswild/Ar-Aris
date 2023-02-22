@@ -17,7 +17,7 @@ app.secret_key = config('APP_SECRET_KEY', default='')
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.config['SQLALCHENY_TRACK_MODIFICATIONS'] = False
 
-ENV = 'dev'
+ENV = 'prod'
 if ENV == 'dev':
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:S92328102011@localhost/utility_scraper'
