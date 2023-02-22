@@ -16,13 +16,24 @@
         <div id="site-content">
             <main class="container-fluid py-2">
                 <!-- Feature to recieve flashed messages -->
-                {% if get_flashed_messages() %}
+                <!-- {% if get_flashed_messages() %}
                 <header>
                     <div class="alert alert-primary mb-0 text-center" role="alert">
-                        {{get_flashed_messages() | join(" ") }}
+                        {{get_flashed_messages() | join("\n") }}
                     </div>
                 </header>
-                {% endif %}
+                {% endif %} -->
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <div class="alert alert-primary mb-0 text-center" role="alert" >
+                            <ul class=flashes>
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                {% endwith %}
                 <!-- Feature for importing html templates -->
                 {% block main %} {% endblock %}
             </main>

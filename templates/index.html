@@ -13,9 +13,11 @@
         crossorigin=""></script>
     <script src="https://unpkg.com/@geoapify/geocoder-autocomplete@1.4.0/dist/index.min.js"></script>
     <!-- Add rest of code from template to head with below Jinja command -->
+
     {{ super() }}
 {% endblock %}
 {% block main %}
+
     <div >
         <h1 id="site-header">
             Ar Aris
@@ -35,15 +37,24 @@
                 </div>
                 <div id="map"></div>
             </div>
-            <div class="row g-1">
+            <div class="row g-1" id="inputs">
                 <input type="hidden" id="address" name="address">
-                <div class="col">
+                <input type="hidden" id="district" name="district">
+                <div class="col-6">
                     <input type="text" class="form-control" id="name" name="name" placeholder="Name">
                 </div>
-                <div class="col">
+                <div class="col-6">
                     <input type="text" class="form-control" id="email" name="email" placeholder="Email">
-                  </div>
-                <div class="col">
+                </div>
+                <div class="col-6">
+                    <select class="form-select" aria-label=".form-select-sm example" id="preference", name="preference">
+                        <option selected>Notification preference</option>
+                        <option value="email">Email</option>
+                        <option value="text">Text message</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+                <!-- <div class="col-6">
                     <select class="form-select" aria-label=".form-select-sm example" id="district" name="district">
                         <option selected>District</option>
                         <option value="Chugureti">Chugureti</option>
@@ -57,10 +68,14 @@
                         <option value="Samgori">Samgori</option>
                         <option value="Vake">Vake</option>
                     </select>
+                </div> -->
+                <div class="col-6">
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone number">
                 </div>
-                <div class="col">
+                <div class="col-12">
                     <button id="submit" type="submit" class="btn btn-primary">Register</button>
                 </div>
+                    
             </div>
         </form>
         <p>
@@ -69,6 +84,9 @@
             in error, please <a href="mailto:chocoiswild@gmail.com">contact me.</a>
         </p>
     </div>
+    <script src="https://cdn.rawgit.com/hayeswise/Leaflet.PointInPolygon/v1.0.0/wise-leaflet-pip.js"></script>
+    <script type="text/javascript" 
+        src="{{ url_for('static', filename = 'municipalities.js') }}"></script>
     <!-- Include JS code to run the Leaflet map and Geoapify address searcher -->
     <script type="text/javascript" 
         src="{{ url_for('static', filename = 'scripts.js') }}"></script>

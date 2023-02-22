@@ -1,0 +1,44 @@
+16/02/2023 17:49:18| User authorisation  |-| balance: N/A
+16/02/2023 17:54:55| User authorisation 598865300 |+| balance: 48
+16/02/2023 17:54:55| number: 598865300 | status:  success   | balance: 46 | sms: 
+Hi {name},
+Please click the following link to confirm you wish to receive utility disruption notifications via text:
+https://www.araris.ge/confirmation/phone/{token}
+|
+16/02/2023 17:55:45| User authorisation 598865300 |+| balance: 46
+16/02/2023 17:55:45| number: 598865300 | status:  success   | balance: 44 | sms: 
+Hi text,
+Please click the following link to confirm you wish to receive utility disruption notifications via text:
+https://www.araris.ge/confirmation/phone/IjIi._mhZUVWOMHI_lzbc25WKkNSDWrs
+|
+16/02/2023 17:56:09| User authorisation 598865300 |+| balance: 44
+16/02/2023 17:56:09| number: 598865300 | status:  success   | balance: 42 | sms: Hi text,
+Please click the following link to confirm you wish to receive utility disruption notifications via text:
+https://www.araris.ge/confirmation/phone/IjIi._mhZUVWOMHI_lzbc25WKkNSDWrs
+|
+16/02/2023 17:56:22| User authorisation 598865300 |+| balance: 42
+16/02/2023 17:56:22| number: 598865300 | status:  success   | balance: 40 | sms: Hi text,
+Please click the following link to confirm you wish to receive utility disruption notifications via text:
+https://www.araris.ge/confirmation/phone/IjIi._mhZUVWOMHI_lzbc25WKkNSDWrs|
+16/02/2023 17:58:34| User authorisation 598865300 |+| balance: 40
+16/02/2023 18:04:52| User authorisation 598865300 |+| balance: 38
+16/02/2023 18:06:53| User authorisation 598865300 |+| balance: 36
+16/02/2023 18:06:53| number: 598865300 | status:  success   | balance: 34 | sms: Hi Shash,
+Please click the following link to confirm you wish to receive utility disruption notifications via text:
+https://www.araris.ge/confirmation/phone/MTc.KXJOmlvkgrWOl-1579VJ7castEY|
+16/02/2023 18:11:08| User authorisation 598865300 |+| balance: 34
+16/02/2023 18:11:08| number: +995598865300 | status:  success   | balance: 32 | sms: Hi sdf,
+Please click the following link to confirm you wish to receive utility disruption notifications via text:
+https://www.araris.ge/confirmation/phone/MTg.vl-h_uGkcWxHUDsSKBajhZcQ2NE|
+16/02/2023 18:20:38| User authorisation 598865300 |+| balance: 32
+16/02/2023 18:20:38| number: +995598865300 | status:  success   | balance: 30 | sms: Hi shash,
+Please click the following link to confirm you wish to receive utility disruption notifications via text:
+https://www.araris.ge/confirmation/MTk.XKNX3Z5NqVX-gJUc28Y7XV_0gdg|
+16/02/2023 18:31:42| User authorisation 598865300 |+| balance: 30
+16/02/2023 18:31:42| number: 598865300 | status:  success   | balance: 28 | sms: Hi sdfsdf,
+Please click the following link to confirm you wish to receive utility disruption notifications via text:
+https://www.araris.ge/confirmation/MjA.cRK3EWngFLCGhcO-J0F6_k6S_yo|
+21/02/2023 20:34:10| User authorisation 598865300 |+| balance: 47
+21/02/2023 20:34:10| number: 598865300 | status:  success   | balance: 45 | sms: Hi test,
+Please click the following link to confirm you wish to receive utility disruption notifications via text:
+https://www.araris.ge/confirmation/phone/MjE.3_gPSVF49mpSFOYnCuwsGCOysA8|
