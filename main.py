@@ -377,7 +377,7 @@ def index():
         flash("Please check your emails to confirm your registration", category="message")
 
         # Send the user a confirmation text if they entered a number
-        if not inputs["phone"] == "":
+        if inputs["phone"] is not None:
             phone_token = generate_token(user.id, "Phone number")
             send_confirmation_text(user, phone_token)
             flash("Please click the link we just texted you to receive text notifications", category="message")

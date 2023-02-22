@@ -42,3 +42,4 @@ https://www.araris.ge/confirmation/MjA.cRK3EWngFLCGhcO-J0F6_k6S_yo|
 21/02/2023 20:34:10| number: 598865300 | status:  success   | balance: 45 | sms: Hi test,
 Please click the following link to confirm you wish to receive utility disruption notifications via text:
 https://www.araris.ge/confirmation/phone/MjE.3_gPSVF49mpSFOYnCuwsGCOysA8|
+22/02/2023 13:22:53| User authorisation 598865300 |+| balance: 50
